@@ -1,0 +1,15 @@
+INFO aplikace startuje
+INFO pripojeni k databazi OK
+ERROR databáze neodpovída
+WARN pomala odezva serveru
+INFO aplikace bezi
+ERROR nova chyba v aplikaci
+INFO vsechno bezi
+ERROR dalsi problem
+INFO vsechno OK
+WARN server je pomaly
+ERROR datapaze spadla
+ERROR datapaze spadla
+WARN server je pomaly
+WARN server je pomaly
+ERROR datapaze spadla
