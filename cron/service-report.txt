@@ -1,0 +1,10 @@
+Cas kontroly: 31-05-2026 15:21:45
+
+Kontroluji sluzbu: cron
+Sluzba cron bezi
+Sluzba cron je povolena po startu
+
+Kontroluji sluzbu: ssh
+Sluzba ssh neexistuje
+
+CELKOVY STAV: PROBLEM
