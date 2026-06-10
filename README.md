@@ -1,43 +1,48 @@
 # Linux Bash Log Automation Project
 
-Small Linux/Bash portfolio project for log checking, report generation, cron automation and basic service troubleshooting.
+Small Linux/Bash portfolio project focused on log checks, report generation, cron automation and basic service troubleshooting.
 
 ## What it shows
 
 * Bash scripting
 * Linux terminal basics
 * working with logs
-* "ERROR" / "WARN" detection
+* `ERROR` / `WARN` detection
 * exit codes
 * cron automation
-* basic "systemctl" / "journalctl"
+* basic `systemctl` / `journalctl`
 * simple troubleshooting workflow
 
 ## Scripts
 
-bash
+```bash
 ./scripts/kontrola-logu.sh logs/app.log
 ./scripts/kontrola-vsech-logu.sh logs
 ./scripts/vytvor-report.sh logs
 ./scripts/posledni-report.sh reports
-./scripts/uklid-reporty.sh reports 7
+./scripts/uklid-reporty.sh
+```
 
 ## Service check
 
-bash
+```bash
 ./cron/service-test.sh cron
+./cron/service-test.sh cron ssh docker
+```
 
-Used for basic service status checks and reading service logs.
+Used for checking whether a service exists, is active, is enabled after boot and for reading recent service logs.
 
 ## Cron example
 
-cron
+```cron
 0 * * * * cd /path/to/project && ./scripts/vytvor-report.sh logs >> cron_logs/report-cron.log 2>&1
+```
 
 ## Workflow
 
-text
+```text
 logs → Bash scripts → reports → cron → service checks → exit codes
+```
 
 ## Technologies
 
@@ -49,45 +54,51 @@ Linux, Bash, Cron, systemctl, journalctl, grep, wc, tail, find, Git
 
 # Linux Bash Log Automation Project
 
-Menší Linux/Bash portfolio projekt pro kontrolu logů, generování reportů, cron automatizaci a základní troubleshooting služeb.
+Menší Linux/Bash portfolio projekt zaměřený na kontrolu logů, generování reportů, cron automatizaci a základní troubleshooting služeb.
 
 ## Co ukazuje
 
 * Bash skriptování
 * základy Linux terminálu
 * práci s logy
-* detekci "ERROR" / "WARN"
+* detekci `ERROR` / `WARN`
 * exit kódy
 * cron automatizaci
-* základní práci s "systemctl" / "journalctl"
+* základní práci se `systemctl` / `journalctl`
 * jednoduché troubleshooting workflow
 
 ## Skripty
 
-bash
+```bash
 ./scripts/kontrola-logu.sh logs/app.log
 ./scripts/kontrola-vsech-logu.sh logs
 ./scripts/vytvor-report.sh logs
 ./scripts/posledni-report.sh reports
-./scripts/uklid-reporty.sh reports 7
+./scripts/uklid-reporty.sh
+```
 
 ## Kontrola služby
 
-bash
+```bash
 ./cron/service-test.sh cron
+./cron/service-test.sh cron ssh docker
+```
 
-Slouží pro základní kontrolu stavu služby a čtení logů služby.
+Slouží ke kontrole, jestli služba existuje, běží, je povolená po startu systému a k vypsání posledních logů služby.
 
 ## Cron příklad
 
-cron
+```cron
 0 * * * * cd /path/to/project && ./scripts/vytvor-report.sh logs >> cron_logs/report-cron.log 2>&1
+```
 
 ## Workflow
 
-text
+```text
 logy → Bash skripty → reporty → cron → kontrola služeb → exit kódy
+```
 
 ## Technologie
 
 Linux, Bash, Cron, systemctl, journalctl, grep, wc, tail, find, Git
+
