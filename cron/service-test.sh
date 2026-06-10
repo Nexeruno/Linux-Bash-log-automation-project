@@ -1,5 +1,7 @@
 #!/bin/bash
+
 CAS=$(date "+%d-%m-%Y %H:%M:%S")
+
 SERVICE="$1"
 
 zkontroluj(){

@@ -4,16 +4,6 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 REPORT_DIR="$PROJECT_DIR/reports"
 
-kontrola_cesty(){
- local CESTA="$1"
-
-  if [ ! -d "$CESTA" ] && [ -d "$PROJECT_DIR/$CESTA" ]; then
-   echo "$PROJECT_DIR/$CESTA"
-  else
-   echo "$CESTA"
-  fi
-}
-
 zkontroluj_help(){
  if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   ukaz_pouziti
@@ -40,7 +30,7 @@ najdi_nejnovejsi_report(){
 }
 
 report_nenalezen() {
- if [ -z "$1"]; then
+ if [ -z "$1" ]; then
   echo "Nenalezen zadny $2"
   exit 1
  fi

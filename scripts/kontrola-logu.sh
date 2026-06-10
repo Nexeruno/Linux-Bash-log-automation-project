@@ -2,7 +2,6 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-
 LOG="$1"
 
 zkontroluj_help() {
@@ -19,14 +18,6 @@ kontrola_argumentu(){
  fi
 }
 
-kontrola_cesty(){
- local CESTA="$1"
-  if [ ! -f "$CESTA" ] && [ -f "$PROJECT_DIR/$CESTA" ]; then
-   echo "$PROJECT_DIR/$CESTA"
-  else
-   echo "$CESTA"
-  fi
-}
 
 kontrola_souboru(){
  if ! existuje_soubor "$1"; then

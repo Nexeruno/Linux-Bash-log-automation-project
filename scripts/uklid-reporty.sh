@@ -3,8 +3,11 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 REPORT_DIR="$PROJECT_DIR/reports"
+
 DAY=1
+
 MINUTES=$((DAY * 1440))
+
 CAS="24 hodin"
 
 chyba(){

@@ -1,8 +1,11 @@
 #!/bin/bash
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-CAS=$(date +"%d.%m.%Y_%H:%M:%S")
+
+CAS=$(date +"%d-%m-%Y_%H:%M:%S")
+
 LOG_DIR="logs"
+
 REPORT_DIR="$PROJECT_DIR/reports"
 
 zkontroluj_help() {
@@ -10,16 +13,6 @@ zkontroluj_help() {
   ukaz_pouziti
   exit 0
  fi
-}
-
-kontrola_cesty(){
- local CESTA="$1"
-
-  if [ ! -d "$CESTA" ] && [ -d "$PROJECT_DIR/$CESTA" ]; then
-   echo "$PROJECT_DIR/$CESTA"
-  else
-   echo "$CESTA"
-  fi
 }
 
 moc_argumentu() {
@@ -58,6 +51,7 @@ local STAV=${PIPESTATUS[0]}
 
 return "$STAV"
 }
+
 vysledek_reportu() {
  echo "Report vytvoren: $1"
  echo "Vysledek kontroly: $2"
