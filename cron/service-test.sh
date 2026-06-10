@@ -103,19 +103,6 @@ zkontroluj "$#"
 
 kontrola_casu "$CAS"
 
-SERVICE="$1"
-STAV=0
-
-bezi_sluzba "$SERVICE"
-
-povolena_sluzba "$SERVICE"
-
-sluzba_bezi "$SERVICE"
-
-sluzba_povolena "$SERVICE"
-
-sluzba_existuje "$SERVICE"
-
 for_cyklus "$@"
 STAV=$?
 

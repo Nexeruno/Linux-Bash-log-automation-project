@@ -2,8 +2,6 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-LOG="$1"
-
 zkontroluj_help() {
  if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   ukaz_pouziti
@@ -26,8 +24,8 @@ kontrola_souboru(){
 }
 
 ukaz_pouziti() {
- echo "Pouziti: ./skripts/kontrola-logu.sh [SOUBOR_LOGU]"
- echo "Priklad: ./skripts/kontrola-logu.sh logs/app.log"
+ echo "Pouziti: ./scripts/kontrola-logu.sh [SOUBOR_LOGU]"
+ echo "Priklad: ./scripts/kontrola-logu.sh logs/app.log"
 }
 
 chyba() {
@@ -79,9 +77,9 @@ echo "Kontrola logu"
 
 zkontroluj_help "$1"
 
-kontrola_argumentu "$#"
+LOG="$1"
 
-LOG=$(kontrola_cesty "$1")
+kontrola_argumentu "$#"
 
 kontrola_souboru "$LOG"
 
@@ -105,4 +103,3 @@ vyhodnot_stav_ERROR_logu "$ERROR_COUNT" "$LOG"
 }
 
 main "$@"
-

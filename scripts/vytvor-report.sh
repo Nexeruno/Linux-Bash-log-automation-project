@@ -4,8 +4,6 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 CAS=$(date +"%d-%m-%Y_%H-%M-%S")
 
-LOG_DIR="logs"
-
 REPORT_DIR="$PROJECT_DIR/reports"
 
 zkontroluj_help() {
@@ -68,8 +66,8 @@ vysledek_kontroly(){
 }
 
 ukaz_pouziti() {
- echo "Pouziti: ./skripts/vytvor-report.sh [SLOZKA_S_LOGY]"
- echo "Priklad: ./skripts/vytvor-report.sh logs"
+ echo "Pouziti: ./scripts/vytvor-report.sh [SLOZKA_S_LOGY]"
+ echo "Priklad: ./scripts/vytvor-report.sh logs"
 }
 
 chyba() {
@@ -81,11 +79,11 @@ main(){
 
 zkontroluj_help "$1"
 
+LOG_DIR="${1:-logs}"
+
 moc_argumentu "$#"
 
 kontrola_slozky "$#" "$1"
-
-LOG_DIR=$(kontrola_cesty "$LOG_DIR")
 
 vytvoreni_slozky "$REPORT_DIR"
 

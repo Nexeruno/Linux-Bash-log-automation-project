@@ -2,17 +2,6 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-LOG_DIR="logs"
-
-kontrola_cesty(){
- local CESTA="$1"
-  if [ ! -d "$CESTA" ] && [ -d "$PROJECT_DIR/$CESTA" ]; then
-   echo "$PROJECT_DIR/$CESTA"
-  else
-   echo "$CESTA"
-  fi
-}
-
 zkontroluj_help(){
  if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   ukaz_pouziti
@@ -74,8 +63,8 @@ souhrn_erroru(){
 }
 
 ukaz_pouziti() {
- echo "Pouziti: ./skripts/kontrola-vsech-logu.sh [SLOZKA_S_LOGY]"
- echo "Priklad: ./skripts/kontrola-vsech-logu.sh logs"
+ echo "Pouziti: ./scripts/kontrola-vsech-logu.sh [SLOZKA_S_LOGY]"
+ echo "Priklad: ./scripts/kontrola-vsech-logu.sh logs"
 }
 
 chyba() {
@@ -89,11 +78,11 @@ echo "Kontroluji vsechny logy"
 
 zkontroluj_help "$1"
 
+LOG_DIR="${1:-logs}"
+
 moc_argumentu "$#"
 
 nazev_slozky "$#" "$1"
-
-LOG_DIR=$(kontrola_cesty "$LOG_DIR")
 
 existuje_slozka "$LOG_DIR"
 

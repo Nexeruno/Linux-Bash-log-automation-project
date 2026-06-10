@@ -4,11 +4,11 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 REPORT_DIR="$PROJECT_DIR/reports"
 
-DAY=1
+DAYS=1
 
-MINUTES=$((DAY * 1440))
+MINUTES=$((DAYS * 1440))
 
-CAS="24 hodin"
+AGE_LABEL="24 hodin"
 
 chyba(){
  echo "CHYBA: $1"
@@ -38,7 +38,7 @@ find "$1" -type f -name "*.txt" -mmin +"$2" -delete
 } 
 echo "uklid starych reportu"
 echo "slozka s reporty: $REPORT_DIR"
-echo "mazu reporty starsi nez $MINUTES minut - $CAS"
+echo "mazu reporty starsi nez $MINUTES minut - $AGE_LABEL"
 
 existuje_slozka "$REPORT_DIR"
 

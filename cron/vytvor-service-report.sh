@@ -4,7 +4,7 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 REPORT_DIR="$PROJECT_DIR/service_reports"
 
-CAS=$(date +"%d-%m-%Y_%H:%M:%S")
+CAS=$(date +"%d-%m-%Y_%H-%M-%S")
 
 REPORT="$REPORT_DIR/service_report-$CAS.txt"
 
