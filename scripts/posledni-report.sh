@@ -41,7 +41,7 @@ cteni_reportu() {
  cat "$1/$2"
 }
 ukaz_pouziti() {
- echo "Pouziti: ./skripts/posledni-report.sh"
+ echo "Pouziti: ./scripts/posledni-report.sh"
  echo "Vypise nejnovejsi report ze slozky reports"
 }
 
@@ -54,8 +54,6 @@ navod "$#"
 echo "Hledam posledni $REPORT_DIR"
 
 existuje_slozka "$REPORT_DIR"
-
-
 
 NEJNOVSI=$(najdi_nejnovejsi_report "$REPORT_DIR")
 
