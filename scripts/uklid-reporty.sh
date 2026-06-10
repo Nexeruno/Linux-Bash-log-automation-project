@@ -12,7 +12,7 @@ CAS="24 hodin"
 
 chyba(){
  echo "CHYBA: $1"
- exit
+ exit 1
 }
 
 existuje_slozka() {

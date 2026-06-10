@@ -2,7 +2,7 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-CAS=$(date +"%d-%m-%Y_%H:%M:%S")
+CAS=$(date +"%d-%m-%Y_%H-%M-%S")
 
 LOG_DIR="logs"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CAS=$(date "+%d-%m-%Y %H:%M:%S")
+CAS=$(date "+%d-%m-%Y %H-%M-%S")
 
 SERVICE="$1"
 
@@ -56,16 +56,7 @@ sluzba_povolena(){
 }
 
 sluzba_existuje(){
- systemctl status "$1" >/dev/null 2>&1
-}
-
-sluzba_neexistuje() {
- if ! sluzba_existuje "$1"; then
-  echo "Sluzba $1 neexistuje"
-  STAV=1
-  echo
-  continue
- fi
+ systemctl cat "$1" >/dev/null 2>&1
 }
 
 bezi_sluzba(){
@@ -73,7 +64,7 @@ bezi_sluzba(){
   echo "Sluzba $1 bezi"
  else
   echo "Sluzba $1 nebezi"
-  vypis_logy_sluzby "$SERVICE"
+  vypis_logy_sluzby "$1"
   STAV=1
  fi
 }
@@ -115,10 +106,18 @@ kontrola_casu "$CAS"
 SERVICE="$1"
 STAV=0
 
+bezi_sluzba "$SERVICE"
+
+povolena_sluzba "$SERVICE"
+
+sluzba_bezi "$SERVICE"
+
+sluzba_povolena "$SERVICE"
+
+sluzba_existuje "$SERVICE"
 
 for_cyklus "$@"
 STAV=$?
-
 
 celkovy_stav "$STAV"
 
